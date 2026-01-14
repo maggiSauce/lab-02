@@ -30,6 +30,7 @@
         android:id="@+id/button_add_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="addCity"
         android:text="Add City"
         app:layout_constraintEnd_toStartOf="@+id/textVIew_header"
         app:layout_constraintStart_toStartOf="parent"
