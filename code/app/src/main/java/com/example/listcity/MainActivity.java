@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<String> cityAdapter;
     ArrayList<String> dataList;
 
+    EditText inputCityText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button button_add_city = findViewById(R.id.button_add_city);
         Button button_delete_city = findViewById(R.id.button_delete_city);
+
+        inputCityText = findViewById(R.id.editText_city_name_userin);
 
         cityList = findViewById(R.id.city_list);
 
@@ -44,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // this is the code that is executed when the button is clicked
-                addCity("Test");
+                addCity();
             }
         });
 
@@ -52,18 +57,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // this is the code that is executed when the button is clicked
-                deleteCity("Test");
+                deleteCity();
             }
         });
     }
 
-    public void addCity(String city) {
+    public void addCity() {
+        String city = inputCityText.getText().toString();
         dataList.add(city);
         cityList.setAdapter(cityAdapter);
     }
 
-    public void deleteCity(String city) {
-        dataList.remove("Edmonton");
+    public void deleteCity() {
+        String city = inputCityText.getText().toString();
+        dataList.remove(city);
         cityList.setAdapter(cityAdapter);
     }
 }
