@@ -17,6 +17,6 @@ https://www.w3schools.com/java/ref_arraylist_remove.asp
 
 | Student Name | CCID      |
 | ------------ | --------- |
-| `Alyssa Shen`| `bbui`    |
+| `Alyssa Shen`| `xshen13` |
 | `Kevin Cao`  | `kcao6`   |
 
